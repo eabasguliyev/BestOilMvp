@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BestOilMVP.Models
+{
+    public class Payment
+    {
+        public string  Name { get; set; }
+        public double Liter { get; set; }
+        public double Price { get; set; }
+        public double Pay { get; set; }
+        public DateTime DateTime { get; set; }
+    }
+}
