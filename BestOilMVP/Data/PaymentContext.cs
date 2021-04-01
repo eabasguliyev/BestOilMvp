@@ -16,5 +16,9 @@ namespace BestOilMVP.Data
         }
 
         public DbSet<Payment> Payments { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+
+        }
     }
 }
