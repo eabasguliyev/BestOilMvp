@@ -22,7 +22,8 @@ namespace BestOilMVP.Views
         public EventHandler<EventArgs> PictureBoxCloseMouseLeave { get; set; }
         public EventHandler<EventArgs> PictureBoxCloseMouseClick { get; set; }
         public EventHandler<EventArgs> ButtonRemoveClicked { get; set; }
-        public EventHandler<EventArgs> ListBoxDataSelectedIndexChanged { get; set; }
+        public EventHandler<KeyPressEventArgs> TextBoxKeyPress { get; set; }
+        public EventHandler<EventArgs> TextBoxHandleText { get; set; }
 
         public int ComboBoxSelectedIndex
         {
@@ -111,11 +112,13 @@ namespace BestOilMVP.Views
 
         private void TextBoxFuelLiter_TextChanged(object sender, EventArgs e)
         {
+            TextBoxHandleText.Invoke(sender, e);
             TextBoxFuelLiterTextChanged.Invoke(sender, e);
         }
 
         private void TextBoxFuelPrice_TextChanged(object sender, EventArgs e)
         {
+            TextBoxHandleText.Invoke(sender, e);
             TextBoxFuelPriceTextChanged.Invoke(sender, e);
         }
 
@@ -164,6 +167,11 @@ namespace BestOilMVP.Views
         private void ListBoxData_SelectedIndexChanged(object sender, EventArgs e)
         {
             //ListBoxDataSelectedIndexChanged.Invoke(sender, e);
+        }
+
+        private void TextBoxFuelLiter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxKeyPress.Invoke(sender, e);
         }
     }
 }

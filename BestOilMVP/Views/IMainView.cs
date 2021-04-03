@@ -25,7 +25,8 @@ namespace BestOilMVP.Views
         EventHandler<EventArgs> PictureBoxCloseMouseLeave { get; set; }
         EventHandler<EventArgs> PictureBoxCloseMouseClick { get; set; }
         EventHandler<EventArgs> ButtonRemoveClicked { get; set; }
-        EventHandler<EventArgs> ListBoxDataSelectedIndexChanged { get; set; }
+        EventHandler<KeyPressEventArgs> TextBoxKeyPress { get; set; }
+        EventHandler<EventArgs> TextBoxHandleText { get; set; }
 
         int ComboBoxSelectedIndex { get; set; }
         List<Fuel> Fuels { get; set; }

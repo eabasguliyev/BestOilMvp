@@ -63,6 +63,16 @@ namespace BestOilMVP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bestOil {
+            get {
+                object obj = ResourceManager.GetObject("bestOil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_window_50px {
             get {
                 object obj = ResourceManager.GetObject("close_window_50px", resourceCulture);

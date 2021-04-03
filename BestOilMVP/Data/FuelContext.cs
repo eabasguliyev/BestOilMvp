@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Linq;
 using BestOilMVP.Models;
 
 namespace BestOilMVP.Data
@@ -7,6 +8,16 @@ namespace BestOilMVP.Data
     {
         public FuelContext():base("FuelDb2")
         {
+            LoadData();
+        }
+
+        public DbSet<Fuel> Fuels { get; set; }
+
+        private void LoadData()
+        {
+            if (Fuels.Count() == 3)
+                return;
+
             Fuels.Add(new Fuel()
             {
                 Name = "AI92",
@@ -24,9 +35,9 @@ namespace BestOilMVP.Data
                 Name = "Diesel",
                 Price = 0.95,
             });
-        }
 
-        public DbSet<Fuel> Fuels { get; set; }
+            this.SaveChanges();
+        }
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{

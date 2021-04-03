@@ -8,6 +8,7 @@ using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BestOilMVP.Helpers;
@@ -42,26 +43,31 @@ namespace BestOilMVP.Presenters
             _view.PictureBoxCloseMouseLeave += PictureBoxCloseMouseLeave;
             _view.PictureBoxCloseMouseClick += PictureBoxCloseMouseClick;
             _view.ButtonRemoveClicked += ButtonRemoveClicked;
+            _view.TextBoxKeyPress += TextBoxKeyPress;
+            _view.TextBoxHandleText += TextBoxHandleText;
 
             _view.Fuels = _fuelDb.Fuels.ToList();
-            //_view.Fuels = new List<Fuel>()
-            //{
-            //    new Fuel()
-            //    {
-            //        Name = "AI92",
-            //        Price = 1.95,
-            //    },
-            //    new Fuel()
-            //    {
-            //        Name = "AI95",
-            //        Price = 1.10,
-            //    },
-            //    new Fuel()
-            //    {
-            //        Name = "Diesel",
-            //        Price = 0.95,
-            //    },
-            //};
+        }
+
+        private void TextBoxHandleText(object sender, EventArgs e)
+        {
+            if (!(sender is TextBox textBox)) return;
+
+
+            var value = textBox.Text;
+
+            if(value.Length == 1 && value[0] == '0')
+                value = String.Empty;
+            else if (!Regex.IsMatch(value, @"^\d+\.?\d*$"))
+                value = String.Empty;
+
+            textBox.Text = value;
+        }
+
+        private void TextBoxKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                        (e.KeyChar != '.');
         }
 
         private void ButtonRemoveClicked(object sender, EventArgs e)

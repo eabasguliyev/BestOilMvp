@@ -47,22 +47,22 @@
             this.ComboBoxFuels = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ButtonRemove = new System.Windows.Forms.Button();
             this.ButtonLoad = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ButtonAdd = new System.Windows.Forms.Button();
             this.ButtonClear = new System.Windows.Forms.Button();
             this.ListBoxData = new System.Windows.Forms.ListBox();
             this.PanelFormTop = new System.Windows.Forms.Panel();
             this.FormTitle = new System.Windows.Forms.Label();
             this.PictureBoxClose = new System.Windows.Forms.PictureBox();
-            this.ButtonRemove = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.PanelFormTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -101,6 +101,7 @@
             this.TextBoxFuelPrice.TabIndex = 30;
             this.TextBoxFuelPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TextBoxFuelPrice.TextChanged += new System.EventHandler(this.TextBoxFuelPrice_TextChanged);
+            this.TextBoxFuelPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxFuelLiter_KeyPress);
             // 
             // TextBoxFuelLiter
             // 
@@ -112,6 +113,7 @@
             this.TextBoxFuelLiter.TabIndex = 29;
             this.TextBoxFuelLiter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TextBoxFuelLiter.TextChanged += new System.EventHandler(this.TextBoxFuelLiter_TextChanged);
+            this.TextBoxFuelLiter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxFuelLiter_KeyPress);
             // 
             // panel2
             // 
@@ -301,6 +303,21 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             // 
+            // ButtonRemove
+            // 
+            this.ButtonRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
+            this.ButtonRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ButtonRemove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(177)))), ((int)(((byte)(197)))));
+            this.ButtonRemove.Location = new System.Drawing.Point(272, 34);
+            this.ButtonRemove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ButtonRemove.Name = "ButtonRemove";
+            this.ButtonRemove.Size = new System.Drawing.Size(138, 66);
+            this.ButtonRemove.TabIndex = 4;
+            this.ButtonRemove.Text = "Remove";
+            this.ButtonRemove.UseVisualStyleBackColor = false;
+            this.ButtonRemove.Click += new System.EventHandler(this.ButtonRemove_Click);
+            // 
             // ButtonLoad
             // 
             this.ButtonLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
@@ -315,16 +332,6 @@
             this.ButtonLoad.Text = "Load";
             this.ButtonLoad.UseVisualStyleBackColor = false;
             this.ButtonLoad.Click += new System.EventHandler(this.ButtonLoad_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(5, 26);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(125, 84);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // ButtonAdd
             // 
@@ -407,20 +414,16 @@
             this.PictureBoxClose.MouseEnter += new System.EventHandler(this.PictureBoxClose_MouseEnter);
             this.PictureBoxClose.MouseLeave += new System.EventHandler(this.PictureBoxClose_MouseLeave);
             // 
-            // ButtonRemove
+            // pictureBox2
             // 
-            this.ButtonRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
-            this.ButtonRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ButtonRemove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(177)))), ((int)(((byte)(197)))));
-            this.ButtonRemove.Location = new System.Drawing.Point(272, 34);
-            this.ButtonRemove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ButtonRemove.Name = "ButtonRemove";
-            this.ButtonRemove.Size = new System.Drawing.Size(138, 66);
-            this.ButtonRemove.TabIndex = 4;
-            this.ButtonRemove.Text = "Remove";
-            this.ButtonRemove.UseVisualStyleBackColor = false;
-            this.ButtonRemove.Click += new System.EventHandler(this.ButtonRemove_Click);
+            this.pictureBox2.Image = global::BestOilMVP.Properties.Resources.bestOil;
+            this.pictureBox2.Location = new System.Drawing.Point(5, 26);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(125, 84);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // MainView
             // 
@@ -446,10 +449,10 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.PanelFormTop.ResumeLayout(false);
             this.PanelFormTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
