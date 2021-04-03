@@ -6,7 +6,7 @@ namespace BestOilMVP.Data
 {
     class FuelContext:DbContext
     {
-        public FuelContext():base("FuelDb2")
+        public FuelContext():base("FuelDb")
         {
             LoadData();
         }
