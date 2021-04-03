@@ -212,6 +212,15 @@ namespace BestOilMVP.Presenters
 
             _db.Payments.Add(payment);
             _db.SaveChanges();
+
+            ClearUserInputs();
+        }
+
+        private void ClearUserInputs()
+        {
+            _view.FuelOrderByLiterText = String.Empty;
+            _view.FuelOrderByPriceText = String.Empty;
+            _view.FuelCostText = "0.00";
         }
     }
 }

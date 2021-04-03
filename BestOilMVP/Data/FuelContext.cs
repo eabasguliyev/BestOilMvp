@@ -41,23 +41,7 @@ namespace BestOilMVP.Data
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{
-        //    Fuels.Add(new Fuel()
-        //    {
-        //        Name = "AI92",
-        //        Price = 1.95,
-        //    });
-
-        //    Fuels.Add(new Fuel()
-        //    {
-        //        Name = "AI95",
-        //        Price = 1.10,
-        //    });
-
-        //    Fuels.Add(new Fuel()
-        //    {
-        //        Name = "Diesel",
-        //        Price = 0.95,
-        //    });
+        //
         //}
     }
 }
